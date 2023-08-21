@@ -16,9 +16,9 @@ class cfgAmmo
     class ammo_Penetrator_Base;
     class ammo_Penetrator_tlp_NLAW: ammo_Penetrator_Base
     {
-        caliber=150;
+        caliber=60;
         warheadName="AP";
-        hit=525;
+        hit=650;
     };
     class M_TLP_NLAW_AT_F: MissileBase
 	{
@@ -27,7 +27,7 @@ class cfgAmmo
 		indirectHitRange=2.4000001;
 		proximityExplosionDistance=5;
 		explosive=0.5;
-		maneuvrability=2;
+		maneuvrability=4;
 		simulationStep=0.0020000001;
 		trackOversteer=0.80000001;
 		trackLead=1;
@@ -95,22 +95,17 @@ class cfgAmmo
 		submunitionAmmo="ammo_Penetrator_tlp_NLAW";
 		submunitionDirectionType="SubmunitionTargetDirection";
 		submunitionInitSpeed=1000;
-		submunitionParentSpeedCoef=1;
+		submunitionParentSpeedCoef=0;
 		submunitionInitialOffset[]={0,0,-0.5};
 		triggerOnImpact=1;
-		triggerDistance=4;
+		triggerDistance=2;
 		deleteParentWhenTriggered=0;
 		flightProfiles[]=
 		{
-			"Direct",
-			"Overfly"
+			"Direct"
 		};
 		class Direct
 		{
-		};
-		class Overfly: Direct
-		{
-			overflyElevation=3.5;
 		};
 		airLock=1;
 		missileLockCone=5;
@@ -196,6 +191,7 @@ class CfgWeapons
         author = "OokamiJamie";
         scope = 1;
         scopeArsenal = 1;
+		airLock=1;
         baseWeapon = "TLP_launch_NLAW_Loaded_F";
         DisplayName = "NLAW";
         magazines[] = {"1rnd_115mm_NLAW_F"};
